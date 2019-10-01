@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<title> password validation</title>
+</head>
+<body>
+
+	<h1 align="center" style="color: blue; padding-left: 50px;"> Static Password Protection</h1>
+
+  <div style="text-align: center; border-style: solid; margin-left: 500px; margin-right: 350px; padding-top: 20px; padding-bottom: 20px;">
+  	<form>
+  		
+  		USERNAME: <input type="text" name="user" id="username" placeholder="enter username"><br><br>
+  		PASSWORD: <input type="password" name="pass" id="pass" placeholder="enter password" required> <br>
+        <p style="padding-left: 80px; color: red;">*password should contain atleast 8 characters with numbers and upper case letters </p><br><br>
+
+  		<input type="submit" name="submit" id="submit" onclick="validatePass()" value="Validate Password">
+  	</form>
+
+  </div>
+      
+   <script type="text/javascript">
+   	 
+   	 function validatePass()
+   	 {
+   	 	var myPass=document.getElementById('pass').value;
+   	 	var flag=0;
+   	 	var number=/[0-9]*/g;
+   	 	var upperCase=/[A-Z]*/g;
+
+   	 	if(myPass.length>=8 && myPass.length<15 && myPass.match(number) && myPass.match(upperCase))
+   	 	{
+   	 		alert("valid password");
+   	 	}
+
+   	 	else
+   	 	{
+   	 		alert("invalid password");
+
+   	 	}
+   	}
+
+   </script>
+
+
+</body>
+</html>
